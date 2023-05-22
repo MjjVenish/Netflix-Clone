@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  padding: 0;
+  margin: 0;
+}
+#root{
+  background-color: black;
+}
+.fouc:focus+label,.fouc:not(:placeholder-shown)+label{
+ font-size: 10px;
+ top:-0px ;
+}
+.fou:focus+label,.fou:not(:placeholder-shown)+label{
+font-size: 10px;
+top: 155px;
+}
+.fo:focus+label,.fo:not(:placeholder-shown)+label{
+  font-size: 10px;
+  top: 75px;
+}
+.active{
+  color: dodgerblue;
+}
+.bg-img{
+  background-image: url(https://springboard-cdn.appadvice.com/wp-content/appadvice-v2-media/2016/11/Netflix-background_860c8ece6b34fb4f43af02255ca8f225.jpg);
+}
+/* .bg-ime{
+  background-image: url(https://isquad.tv/wp-content/uploads/2018/08/Netflix-Background.jpg);
+} */
+.linea{
+  background-image: linear-gradient(#e50914,black);
+}
+.ava{
+  background-image: url(https://s1.dmcdn.net/v/SoB9a1WNgIwgWl4M_/x720);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ava::-webkit-scrollbar{
+  width: 0;
+}
+.err{
+  background-image: url(https://ak.picdn.net/shutterstock/videos/6705676/thumb/10.jpg);
+  background-size: cover;
+}
+.ba::-webkit-scrollbar{
+  height: 0;
+}
+/* .hov{
+  position: relative;
+} */
+.hov{
+  transition: transfrom 600ms ease;
+}
+.hov:hover {
+  z-index:1000 ;
+   transform: scale(1.004);  
+}
+
+.grid-parent:hover li:not(:hover){
+transform: scale(0.96);
+}
+.hov:hover .det,.hov:hover .dete{
+  display: block;
+}
+.sea::-webkit-scrollbar{
+  width: 0;
+}
+.det{
+  display: none;
+}
+.box{
+  scroll-behavior: smooth;
+}
+.youtube{
+  position:relative;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+}
+.carousel-container{
+  display: grid;
+  /* grid-template-columns: ; */
+  grid-auto-flow: column;
+}
+
