@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useAuth } from "../context/netflixContext";
 import { NavLink, useNavigate } from "react-router-dom";
 import netflix from "../assets/pngwing.com.png";
 import { IoMdSearch, IoMdNotifications } from "react-icons/io";
@@ -9,22 +8,18 @@ import { FaKey } from "react-icons/fa";
 import user from "../assets/netflix user.jpg";
 import { ImLocation2 } from "react-icons/im";
 import us from "../assets/user-icon.jpg";
-import { bxios } from "../context/Axios";
+import { useUserContext } from "../context/netflixContext";
+
 const navbar = ["home", "tv shows", "movies", "recently added", "mylist"];
 
 const NavBarNetflix = () => {
-  const { userDetails, logoutNetflix, searchBar } = useAuth();
+  const { userDetails, logoutNetflix, searchBar } = useUserContext();
   const [downBar, setDownBar] = useState(false);
   const [email, setEmail] = useState(false);
   const [pass, setPass] = useState(false);
   const [search, setSearch] = useState(false);
   const [scrFillter, setScrFillter] = useState("");
   const navigation = useNavigate();
-
-  // // const backLogout = async () => {
-  //   const { data } = await bxios.delete("/users/2");
-  //   console.log(data);
-  // };
 
   return (
     <>
@@ -113,7 +108,6 @@ const NavBarNetflix = () => {
                       onClick={() => {
                         logoutNetflix();
                         navigation("/login");
-                        // backLogout();
                       }}
                     >
                       logout
@@ -137,6 +131,7 @@ const NavBarNetflix = () => {
               <input
                 type="search"
                 autoFocus
+                value={scrFillter}
                 className="absolute w-[200px] border bg-[#000]
                  text-white border-white
                   right-[120px] px-[10px] 
@@ -147,9 +142,7 @@ const NavBarNetflix = () => {
                   searchBar(e.target.value);
                 }}
               />
-              <ul>
-                {/* {scrFillter.length > 0 ? navigation("/browse/search") : ""} */}
-              </ul>
+              <ul></ul>
             </>
           ) : (
             ""

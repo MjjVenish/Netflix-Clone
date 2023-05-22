@@ -1,6 +1,5 @@
 import React, { memo } from "react";
 import { NavLink } from "react-router-dom";
-// import { MdLanguage } from "react-icons/md";
 import netflix from "../assets/pngwing.com.png";
 const HomePage = () => {
   return (
@@ -16,7 +15,6 @@ const HomePage = () => {
           id=""
           className=" px-[36px] pr-[10px] py-[6px] mt-[40px] relative bg-[#1b1a1a] text-white"
         >
-          {/* <MdLanguage className="text-white absolute " /> */}
           <option value="English">English</option>
           <option value="Hindi">Hindi</option>
         </select>

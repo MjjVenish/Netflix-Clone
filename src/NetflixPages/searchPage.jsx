@@ -1,17 +1,14 @@
 import React, { memo, useEffect, useState } from "react";
-import { useAuth } from "../context/netflixContext";
 import { bxios } from "../context/Axios";
-// import { useEffect } from "react";
-// import { bxios } from "../context/Axios";
-// import NavBarNetflix from "../Routes/NavBarNeflix";
 import { BsPlayCircleFill, BsPlusLg } from "react-icons/bs";
 import { BiLike } from "react-icons/bi";
 import { AiOutlineDownCircle } from "react-icons/ai";
 import { HiStar } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../context/netflixContext";
 
 const SearchNetflix = () => {
-  const { base_url, search, youtu } = useAuth();
+  const { base_url, search, youtu } = useUserContext();
   const [totalData, setTotalData] = useState([]);
   const navigation = useNavigate();
 
@@ -23,7 +20,7 @@ const SearchNetflix = () => {
     search();
   }, []);
   const addlist = async (data) => {
-    const getlist = await bxios.post("myList", data);
+    await bxios.post("myList", data);
   };
 
   return (

@@ -1,16 +1,16 @@
 import React, { memo, useEffect, useState } from "react";
-import { useAuth } from "../context/netflixContext";
+import { useUserContext } from "../context/netflixContext";
 import { bxios } from "../context/Axios";
 
 const AddList = () => {
-  const { base_url } = useAuth();
+  const { base_url } = useUserContext();
   const [cart, setCart] = useState([]);
   const getcart = async () => {
     const { data } = await bxios.get("/myList");
     setCart(data);
   };
   const delList = async (is) => {
-    const del = await bxios.delete(`/myList/${is}`);
+    await bxios.delete(`/myList/${is}`);
   };
   useEffect(() => {
     getcart();

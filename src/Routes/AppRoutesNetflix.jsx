@@ -3,9 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "../NetflixPages/HomePage";
 import LoginNetflix from "../NetflixPages/LoginPage";
 import BrowseNetflix from "../NetflixPages/BrowsePage";
-import { useAuth } from "../context/netflixContext";
 import ErrorNetflix from "../NetflixPages/ErrorPage";
-import SearchNetflix from "../NetflixPages/searchPage";
 import SingleNetflix from "../NetflixPages/singlePage";
 import { bxios } from "../context/Axios";
 import AddList from "../NetflixPages/addList";
@@ -13,7 +11,7 @@ import RecentAdded from "../NetflixPages/recentPage";
 
 const AppRoutesNetflix = () => {
   const [users, setUsers] = useState([]);
-  const { userDetails } = useAuth();
+
   useEffect(() => {
     const getusers = async () => {
       const { data } = await bxios.get(`/users`);
@@ -30,7 +28,6 @@ const AppRoutesNetflix = () => {
       ) : (
         <Route path="/*" element={<ErrorNetflix />} />
       )}
-      <Route path="/browse/search" element={<SearchNetflix />} />
       <Route path="/browse/:id" element={<SingleNetflix />} />
       <Route path="/recently added" element={<RecentAdded />} />
       <Route path="/mylist" element={<AddList />} />

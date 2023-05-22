@@ -1,33 +1,30 @@
-import React, { memo, useState } from "react";
-import { useAuth } from "../context/netflixContext";
+import React, { memo, useState, useEffect } from "react";
 import { BsPlayFill } from "react-icons/bs";
 import { AiOutlinePlus } from "react-icons/ai";
-import NavBarNetflix from "../Routes/NavBarNeflix";
+import YouTube from "react-youtube";
+import { bxios } from "../context/Axios";
+import NavBarNetflix from "../components/NavBar";
 import MoviesNetflix from "./moviesPage";
 import SearchNetflix from "./searchPage";
-import YouTube from "react-youtube";
-import { useEffect } from "react";
-import { bxios } from "../context/Axios";
-// import Scroll from "./scroll";
+import { useUserContext } from "../context/netflixContext";
 
 // const base_url = "https://image.tmdb.org/t/p/original";
 const BrowseNetflix = () => {
-  const { search, youtu, linky, base_url } = useAuth();
+  const { search, youtu, linky, base_url } = useUserContext();
 
   const [topRated, setTopRated] = useState([]);
   const [popular, setPouplar] = useState([]);
   const [upComing, setUpComing] = useState([]);
-  const [dp, setDp] = useState([]);
-
-  const [main, setMain] = useState([]);
+  const [trending, setTrending] = useState([]);
+  const [banner, setBanner] = useState([]);
   const [play, setPlay] = useState(true);
   const recentAdded = async (data) => {
-    const added = await bxios.post("recent", data);
+    await bxios.post("recent", data);
   };
 
   const randomdata = async () => {
     const { data } = await bxios.get("/movies");
-    setMain([data[Math.floor(Math.random() * data.length - 1)]]);
+    setBanner([data[Math.floor(Math.random() * data.length - 1)]]);
   };
   useEffect(() => {
     onlineData();
@@ -50,10 +47,10 @@ const BrowseNetflix = () => {
   };
   const dpjson = async () => {
     const respon = await bxios.get("/trending");
-    setDp(respon.data);
+    setTrending(respon.data);
   };
   const addCarts = (id) => {
-    const vali = bxios.post("/myList", id);
+    bxios.post("/myList", id);
   };
 
   return (
@@ -63,7 +60,7 @@ const BrowseNetflix = () => {
         <SearchNetflix />
       ) : play ? (
         <ul className={`relative `}>
-          {main?.map((val) => (
+          {banner?.map((val) => (
             <li key={val?.id}>
               <img
                 className="h-[70vh] w-[100%]"
@@ -96,12 +93,6 @@ const BrowseNetflix = () => {
               </h1>
             </li>
           ))}
-          <MoviesNetflix
-            title="TRENDING"
-            urlData={dp}
-            absos={"absolute"}
-            setMain={setMain}
-          />
         </ul>
       ) : (
         <>
@@ -122,27 +113,27 @@ const BrowseNetflix = () => {
           </button>
         </>
       )}
-
-      {/* <Scroll /> */}
-
+      <MoviesNetflix
+        title="TRENDING"
+        urlData={trending}
+        absos={"absolute"}
+        setBanner={setBanner}
+      />
       <MoviesNetflix
         title="POPULAR MOVIES"
         urlData={popular}
-        setMain={setMain}
+        setBanner={setBanner}
       />
-      {/* <Scroll datas={popular} posi2={80} /> */}
       <MoviesNetflix
         title="TOP RATED MOVIES"
         urlData={topRated}
-        setMain={setMain}
+        setBanner={setBanner}
       />
-      {/* <Scroll datas={topRated} posi3={180} /> */}
       <MoviesNetflix
         title="UPCOMING MOVIES"
         urlData={upComing}
-        setMain={setMain}
+        setBanner={setBanner}
       />
-      {/* <Scroll datas={upComing} posi4={260} /> */}
     </>
   );
 };

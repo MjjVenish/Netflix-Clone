@@ -6,7 +6,6 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import AppRoutesNetflix from "./Routes/AppRoutesNetflix";
 import NetflixContext from "./context/netflixContext";
-// import NavBarNetflix from "./Routes/NavBarNeflix";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <NetflixContext>

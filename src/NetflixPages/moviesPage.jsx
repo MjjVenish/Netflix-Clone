@@ -1,26 +1,20 @@
-import React, { memo, useState } from "react";
-import { useAuth } from "../context/netflixContext";
+import React, { memo } from "react";
 import { BsPlayCircleFill, BsPlusLg } from "react-icons/bs";
 import { BiLike } from "react-icons/bi";
 import { AiOutlineDownCircle } from "react-icons/ai";
 import { HiStar } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
-// import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import { useUserContext } from "../context/netflixContext";
 import { bxios } from "../context/Axios";
+import "react-multi-carousel/lib/styles.css";
 
-// const base_url = "https://image.tmdb.org/t/p/original";
 const MoviesNetflix = ({ title, urlData, setMain }) => {
-  const { base_url, youtu } = useAuth();
+  const { base_url, youtu } = useUserContext();
   const navigation = useNavigate();
-  // const [like, setLike] = useState();
   const addlist = async (data) => {
-    const getlist = await bxios.post("myList", data);
+    await bxios.post("myList", data);
   };
-  // const likesof = async(data) => {
-  //   const likes=await bxios.put(``)
-  // };
 
   const responsive = {
     superLargeDesktop: {
@@ -50,10 +44,10 @@ const MoviesNetflix = ({ title, urlData, setMain }) => {
       </h1>
       <div className={`grid-parent grid gap-x-5`}>
         <Carousel responsive={responsive} containerClass="carousel-container">
-          {urlData.map((Data) => (
-            <li key={Data.id} className={`hov`}>
+          {urlData.map((data) => (
+            <li key={data.id} className={`hov`}>
               <img
-                src={`${base_url}${Data.poster_path}`}
+                src={`${base_url}${data.poster_path}`}
                 alt=""
                 className="h-[45vh] w-[100%] "
               />
@@ -63,46 +57,43 @@ const MoviesNetflix = ({ title, urlData, setMain }) => {
                     <BsPlayCircleFill
                       className="text-[30px] border p-[5px] rounded-[50%] mr-[5px]"
                       onClick={() => {
-                        setMain([Data]);
+                        setMain([data]);
                       }}
                     />
                     <BsPlusLg
                       onClick={() => {
-                        addlist(Data);
+                        addlist(data);
                       }}
                       className="text-[30px] border p-[5px] rounded-[50%] mr-[5px]"
                     />
                     <BiLike
                       onClick={() => {}}
-                      className={`text-[30px] border p-[5px] rounded-[50%] ${
-                        ""
-                        // like?.video ? "bg-[#0f64db]" : ""
-                      }`}
+                      className={`text-[30px] border p-[5px] rounded-[50%] `}
                     />
                   </div>
-                  <div className="flex flex-1 justify-end mr-[70px]  ">
+                  <div className="flex flex-1 justify-end mr-[70px] ">
                     <AiOutlineDownCircle
                       onClick={() => {
-                        navigation(`/browse/${Data.id}`);
-                        youtu(Data.video_id);
+                        navigation(`/browse/${data.id}`);
+                        youtu(data.video_id);
                       }}
                       className="text-[35px] p-[5px] border rounded-[50%]"
                     />
                   </div>
                 </div>
                 <div>
-                  <h1> Release-{Data.release_date}</h1>
+                  <h1> Release-{data.release_date}</h1>
                   <h1 className="  mr-[0px]">
-                    {Data.adult ? "U/A 18+" : "U/A 7+"}
+                    {data.adult ? "U/A 18+" : "U/A 7+"}
                   </h1>
                   <div className="flex">
                     <h1>
-                      {Data.original_language === "en" ? "English" : "Spanish"}
+                      {data.original_language === "en" ? "English" : "Spanish"}
                     </h1>
                     <h1 className="flex ml-[65px]">
                       Rating
                       <HiStar className="text-orange-500" />
-                      {Data.vote_average}
+                      {data.vote_average}
                     </h1>
                   </div>
                 </div>

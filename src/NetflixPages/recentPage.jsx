@@ -5,10 +5,10 @@ import { BiLike } from "react-icons/bi";
 import { AiOutlineDownCircle } from "react-icons/ai";
 import { HiStar } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/netflixContext";
+import { useUserContext } from "../context/netflixContext";
 
 const RecentAdded = () => {
-  const { base_url, youtu } = useAuth();
+  const { base_url, youtu } = useUserContext();
   const [recent, setRecent] = useState([]);
   const navigation = useNavigate();
 
@@ -27,7 +27,7 @@ const RecentAdded = () => {
     recentList();
   }, []);
   const addlist = async (data) => {
-    const getlist = await bxios.post("myList", data);
+    await bxios.post("myList", data);
   };
 
   return (

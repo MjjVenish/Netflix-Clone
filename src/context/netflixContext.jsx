@@ -1,15 +1,19 @@
-import { useContext, useEffect, useState, useMemo, useCallback } from "react";
-import { createContext } from "react";
-// import api from "../api/api";
+import {
+  useContext,
+  useEffect,
+  useState,
+  useMemo,
+  useCallback,
+  createContext,
+} from "react";
 import { bxios } from "./Axios";
 
-const contextNet = createContext(null);
+const contextNetlix = createContext(null);
 
 const base_url = "https://image.tmdb.org/t/p/original";
 
 const NetflixContext = ({ children }) => {
   const [userDetails, setUserDetails] = useState(null);
-  // const [backUsers, setBackUsers] = useState(null);
   const intialUser = useMemo(
     () => ({
       email: "venishmjj@gmail.com",
@@ -20,10 +24,8 @@ const NetflixContext = ({ children }) => {
     }),
     []
   );
-
   const [search, setSearch] = useState("");
   const [linky, setLinky] = useState("");
-
   const [totalMovie, setTotalMovie] = useState([]);
 
   useEffect(() => {
@@ -43,13 +45,12 @@ const NetflixContext = ({ children }) => {
   const logoutNetflix = useCallback(() => {
     setUserDetails(null);
   }, []);
-
   const searchBar = (info) => {
     setSearch(info);
   };
-  // console.log(silink);
+
   return (
-    <contextNet.Provider
+    <contextNetlix.Provider
       value={{
         userDetails,
         userLogin,
@@ -64,8 +65,8 @@ const NetflixContext = ({ children }) => {
       }}
     >
       {children}
-    </contextNet.Provider>
+    </contextNetlix.Provider>
   );
 };
 export default NetflixContext;
-export const useAuth = () => useContext(contextNet);
+export const useUserContext = () => useContext(contextNetlix);

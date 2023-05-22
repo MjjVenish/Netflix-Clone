@@ -1,30 +1,24 @@
 import React, { useState, useEffect, useRef, memo } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/netflixContext";
+import { useUserContext } from "../context/netflixContext";
 import netFlix from "../assets/pngwing.com.png";
-import { bxios } from "../context/Axios";
-// import cxios from "../context/Axios";
 
 const LoginNetflix = () => {
-  const { userLogin, intialUser } = useAuth();
+  const { userLogin, intialUser } = useUserContext();
   const [users, setUsers] = useState(intialUser);
   const inputRef = useRef();
   useEffect(() => {
     inputRef.current.focus();
   }, []);
   const Navigate = useNavigate();
-  // const backSumbit = async () => {
-  //   const response = await bxios.post("/users", intialUser);
-  //   console.log(response.data);
-  // };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (users.email.length > 8 && users.pass.length > 6) {
       Navigate("/browse");
       setUsers(intialUser);
       userLogin(users);
-      // backSumbit();
     }
   };
 

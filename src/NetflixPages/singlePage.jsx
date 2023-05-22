@@ -1,12 +1,12 @@
-import React, { memo, useEffect, useState } from "react";
-import { useAuth } from "../context/netflixContext";
+import { memo, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { BsPlayFill } from "react-icons/bs";
 import YouTube from "react-youtube";
 import { bxios } from "../context/Axios";
+import { useUserContext } from "../context/netflixContext";
 
 const SingleNetflix = () => {
-  const { base_url, linky } = useAuth();
+  const { base_url, linky } = useUserContext();
   const [singleMovie, setSingleMovie] = useState([]);
   const { id } = useParams();
 
