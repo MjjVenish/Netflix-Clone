@@ -8,11 +8,11 @@ import { FaKey } from "react-icons/fa";
 import user from "../assets/netflix user.jpg";
 import { ImLocation2 } from "react-icons/im";
 import us from "../assets/user-icon.jpg";
-import { useUserContext } from "../context/netflixContext";
+import { useUserContext } from "../utils/hooks/userContext";
 
 const navbar = ["home", "tv shows", "movies", "recently added", "mylist"];
 
-const NavBarNetflix = () => {
+const NavBar = () => {
   const { userDetails, logoutNetflix, searchBar } = useUserContext();
   const [downBar, setDownBar] = useState(false);
   const [email, setEmail] = useState(false);
@@ -153,4 +153,4 @@ const NavBarNetflix = () => {
     </>
   );
 };
-export default NavBarNetflix;
+export default NavBar;

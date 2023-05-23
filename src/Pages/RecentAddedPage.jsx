@@ -1,11 +1,15 @@
-import React, { memo, useEffect, useState } from "react";
-import { bxios } from "../context/Axios";
+import { memo, useEffect, useState } from "react";
 import { BsPlayCircleFill, BsPlusLg } from "react-icons/bs";
 import { BiLike } from "react-icons/bi";
 import { AiOutlineDownCircle } from "react-icons/ai";
 import { HiStar } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
-import { useUserContext } from "../context/netflixContext";
+import { useUserContext } from "../utils/hooks/userContext";
+import {
+  recentAddedMovies,
+  recentDelete,
+  addlist,
+} from "../lib/axios/api-functions/movies";
 
 const RecentAdded = () => {
   const { base_url, youtu } = useUserContext();
@@ -13,22 +17,16 @@ const RecentAdded = () => {
   const navigation = useNavigate();
 
   const recentList = async () => {
-    const { data } = await bxios.get("/recent");
+    const { data } = await recentAddedMovies();
     setRecent(
       data.length > 10
         ? recentDelete(data.reverse()[data.length - 1])
         : data.reverse()
     );
   };
-  const recentDelete = async (data) => {
-    const fel = await bxios.delete(`/recent/${data.id}`);
-  };
   useEffect(() => {
     recentList();
   }, []);
-  const addlist = async (data) => {
-    await bxios.post("myList", data);
-  };
 
   return (
     <>
@@ -91,4 +89,4 @@ const RecentAdded = () => {
     </>
   );
 };
-export default memo(RecentAdded);
+export default RecentAdded;

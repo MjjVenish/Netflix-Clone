@@ -1,7 +1,6 @@
-import React, { memo } from "react";
 import { NavLink } from "react-router-dom";
 import netflix from "../assets/pngwing.com.png";
-const HomePage = () => {
+const RootPage = () => {
   return (
     <div className="h-[110vh] bg-black bg-ime ">
       <img
@@ -59,4 +58,4 @@ const HomePage = () => {
     </div>
   );
 };
-export default memo(HomePage);
+export default RootPage;

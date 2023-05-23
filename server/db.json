@@ -9,75 +9,6 @@
   "recent": [
     {
       "adult": false,
-      "backdrop_path": "/qpPlEMFmtXtQOsOldyFZiGHKCVq.jpg",
-      "id": 203857,
-      "name": "The Diplomat",
-      "director": "Debora Cahn",
-      "cast": "keri Russell,Rufus Sewell,David Gyasi,Ato Essandoh,Ali Ahn,Rory Kinnear,Celia Imrie,",
-      "genres": "Political TV Shows,TV Dramas,Us Tv Shows,Tv Thrillers",
-      "this show is": "Cerebral,Suspenseful",
-      "maturity rating": " A language,nudity,sex Content restricted to adults",
-      "original_language": "en",
-      "original_name": "The Diplomat",
-      "overview": "In the midst of an international crisis, a career diplomat lands in a high-profile job she’s unsuited for, with tectonic implications for her marriage and her political future.",
-      "poster_path": "/cOKXV0FalCYixNmZYCfHXgyQ0VX.jpg",
-      "media_type": "tv",
-      "genre_ids": [
-        18
-      ],
-      "popularity": 97.343,
-      "first_air_date": "2023-04-20",
-      "video_id": "lV6sJlBbhPs",
-      "vote_average": 7.233,
-      "vote_count": 30,
-      "origin_country": [
-        "US"
-      ]
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/ovM06PdF3M8wvKb06i4sjW3xoww.jpg",
-      "genre_ids": [
-        878,
-        12,
-        28
-      ],
-      "id": 76600,
-      "original_language": "en",
-      "original_title": "Avatar: The Way of Water",
-      "overview": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.",
-      "popularity": 6019.163,
-      "poster_path": "/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
-      "release_date": "2022-12-14",
-      "title": "Avatar: The Way of Water",
-      "video_id": "d9MyW72ELq0",
-      "video": false,
-      "vote_average": 7.7,
-      "vote_count": 7434
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/2rVkDZFLN6DI5PAoraoe9m4IRMN.jpg",
-      "genre_ids": [
-        12,
-        14,
-        35
-      ],
-      "id": 493529,
-      "original_language": "en",
-      "original_title": "Dungeons & Dragons: Honor Among Thieves",
-      "overview": "A charming thief and a band of unlikely adventurers undertake an epic heist to retrieve a lost relic, but things go dangerously awry when they run afoul of the wrong people.",
-      "popularity": 414.166,
-      "poster_path": "/A7AoNT06aRAc4SV89Dwxj3EYAgC.jpg",
-      "release_date": "2023-03-23",
-      "title": "Dungeons & Dragons: Honor Among Thieves",
-      "video": false,
-      "video_id": "HGvv-Hhft3U",
-      "vote_average": 7.4,
-      "vote_count": 493
-    },
-    {
-      "adult": false,
       "backdrop_path": "/hiKmpZMGZsrkA3cdce8a7Dpos1j.jpg",
       "genre_ids": [
         35,
@@ -236,6 +167,48 @@
       "video_id": "smTK_AeAPHs",
       "vote_average": 7.118,
       "vote_count": 102
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9DeGfFIqjph5CBFVQrD6wv9S7rR.jpg",
+      "genre_ids": [
+        12,
+        14,
+        28
+      ],
+      "id": 122,
+      "original_language": "en",
+      "original_title": "The Lord of the Rings: The Return of the King",
+      "overview": "Aragorn is revealed as the heir to the ancient kings as he, Gandalf and the other members of the broken fellowship struggle to save Gondor from Sauron's forces. Meanwhile, Frodo and Sam take the ring closer to the heart of Mordor, the dark lord's realm.",
+      "popularity": 90.002,
+      "poster_path": "/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
+      "release_date": "2003-12-01",
+      "title": "The Lord of the Rings: The Return of the King",
+      "video": false,
+      "video_id": "r5X-hFf6Bwo",
+      "vote_average": 8.5,
+      "vote_count": 21467
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/h8gHn0OzBoaefsYseUByqsmEDMY.jpg",
+      "genre_ids": [
+        28,
+        53,
+        80
+      ],
+      "id": 603692,
+      "original_language": "en",
+      "original_title": "John Wick: Chapter 4",
+      "overview": "With the price on his head ever increasing, John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.",
+      "popularity": 2114.44,
+      "poster_path": "/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
+      "release_date": "2023-03-22",
+      "title": "John Wick: Chapter 4",
+      "video": false,
+      "video_id": "qEVUtrk8_B4",
+      "vote_average": 8,
+      "vote_count": 1167
     }
   ],
   "movies": [
@@ -2043,43 +2016,73 @@
   "myList": [
     {
       "adult": false,
-      "backdrop_path": "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg",
+      "backdrop_path": "/tr91gx3LHDXADTuXga0skogvMw3.jpg",
+      "id": 130987,
+      "name": "Dead Ringers",
+      "Creators": "Debora Cahn",
+      "cast": "Keri Russell,Rufus Sewell,David Gyasi,Ato Essandoh,Ali Ahn,Rory Kinnear,Celia Imrie,Nana Mensah,Miguel Sandovai,Micheal Mckean",
+      "genres": "Political TV Shows,TV Dramas,US TV Shows,TV  Thrillers",
+      "this show is": "Cerebral,Suspenseful",
+      "maturity rating": "A language,nudity,sex  Content restricted to adults",
+      "original_language": "en",
+      "original_name": "Dead Ringers",
+      "overview": "Elliot and Beverly Mantle are twins who share everything: drugs, lovers, and an unapologetic desire to do whatever it takes — including pushing the boundaries on medical ethics — in an effort to challenge antiquated practices and bring women’s healthcare to the forefront.",
+      "poster_path": "/3GZB7pnyAw6QV053TwxiqvRyOw3.jpg",
+      "media_type": "tv",
+      "genre_ids": [
+        9648,
+        18
+      ],
+      "popularity": 102.242,
+      "first_air_date": "2023-04-20",
+      "vote_average": 7.364,
+      "video": "https://www.youtube.com/embed/FA_XOruRFfU",
+      "vote_count": 11,
+      "video_id": "FA_XOruRFfU",
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9DeGfFIqjph5CBFVQrD6wv9S7rR.jpg",
+      "genre_ids": [
+        12,
+        14,
+        28
+      ],
+      "id": 122,
+      "original_language": "en",
+      "original_title": "The Lord of the Rings: The Return of the King",
+      "overview": "Aragorn is revealed as the heir to the ancient kings as he, Gandalf and the other members of the broken fellowship struggle to save Gondor from Sauron's forces. Meanwhile, Frodo and Sam take the ring closer to the heart of Mordor, the dark lord's realm.",
+      "popularity": 90.002,
+      "poster_path": "/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
+      "release_date": "2003-12-01",
+      "title": "The Lord of the Rings: The Return of the King",
+      "video": false,
+      "video_id": "r5X-hFf6Bwo",
+      "vote_average": 8.5,
+      "vote_count": 21467
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/5Y5pz0NX7SZS9036I733F7uNcwK.jpg",
       "genre_ids": [
         27,
         53
       ],
-      "id": 713704,
+      "id": 758323,
       "original_language": "en",
-      "original_title": "Evil Dead Rise",
-      "overview": "Two sisters find an ancient vinyl that gives birth to bloodthirsty demons that run amok in a Los Angeles apartment building and thrusts them into a primal battle for survival as they face the most nightmarish version of family imaginable.",
-      "popularity": 2780.548,
-      "poster_path": "/mIBCtPvKZQlxubxKMeViO2UrP3q.jpg",
-      "release_date": "2023-04-12",
-      "title": "Evil Dead Rise",
+      "original_title": "The Pope's Exorcist",
+      "overview": "Father Gabriele Amorth, Chief Exorcist of the Vatican, investigates a young boy's terrifying possession and ends up uncovering a centuries-old conspiracy the Vatican has desperately tried to keep hidden.",
+      "popularity": 2005.793,
+      "poster_path": "/9JBEPLTPSm0d1mbEcLxULjJq9Eh.jpg",
+      "release_date": "2023-04-05",
+      "title": "The Pope's Exorcist",
       "video": false,
-      "video_id": "smTK_AeAPHs",
-      "vote_average": 7,
-      "vote_count": 124
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/kGzFbGhp99zva6oZODW5atUtnqi.jpg",
-      "genre_ids": [
-        18,
-        80
-      ],
-      "id": 240,
-      "original_language": "en",
-      "original_title": "The Godfather Part II",
-      "overview": "In the continuing saga of the Corleone crime family, a young Vito Corleone grows up in Sicily and in 1910s New York. In the 1950s, Michael Corleone attempts to expand the family business into Las Vegas, Hollywood and Cuba.",
-      "popularity": 67.025,
-      "poster_path": "/hek3koDUyRQk7FIhPXsa6mT2Zc3.jpg",
-      "release_date": "1974-12-20",
-      "title": "The Godfather Part II",
-      "video": false,
-      "video_id": "9O1Iy9od7-A",
-      "vote_average": 8.6,
-      "vote_count": 10766
+      "video_id": "YJXqvnT_rsk",
+      "vote_average": 6.6,
+      "vote_count": 129
     }
   ],
   "trending": [

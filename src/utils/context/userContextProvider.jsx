@@ -1,19 +1,21 @@
 import {
-  useContext,
   useEffect,
   useState,
   useMemo,
   useCallback,
   createContext,
 } from "react";
-import { bxios } from "./Axios";
+import { getAllMovies } from "../../lib/axios/api-functions/movies";
 
-const contextNetlix = createContext(null);
+export const contextNetlix = createContext(null);
 
 const base_url = "https://image.tmdb.org/t/p/original";
 
 const NetflixContext = ({ children }) => {
   const [userDetails, setUserDetails] = useState(null);
+  const [search, setSearch] = useState("");
+  const [linky, setLinky] = useState("");
+  const [totalMovie, setTotalMovie] = useState([]);
   const intialUser = useMemo(
     () => ({
       email: "venishmjj@gmail.com",
@@ -24,16 +26,10 @@ const NetflixContext = ({ children }) => {
     }),
     []
   );
-  const [search, setSearch] = useState("");
-  const [linky, setLinky] = useState("");
-  const [totalMovie, setTotalMovie] = useState([]);
 
   useEffect(() => {
-    const total = async () => {
-      const { data } = await bxios.get("/movies");
-      setTotalMovie(data);
-    };
-    total();
+    const { data } = getAllMovies();
+    setTotalMovie(data);
   }, []);
 
   const youtu = (url) => {
@@ -69,4 +65,3 @@ const NetflixContext = ({ children }) => {
   );
 };
 export default NetflixContext;
-export const useUserContext = () => useContext(contextNetlix);

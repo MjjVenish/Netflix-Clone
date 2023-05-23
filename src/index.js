@@ -4,13 +4,13 @@ import "./index.css";
 // import App from './App';
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import AppRoutesNetflix from "./Routes/AppRoutesNetflix";
-import NetflixContext from "./context/netflixContext";
+import AppRoutes from "./Routes/AppRoutes";
+import NetflixContext from "./utils/context/userContextProvider";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <NetflixContext>
     <BrowserRouter>
-      <AppRoutesNetflix />
+      <AppRoutes />
     </BrowserRouter>
   </NetflixContext>
 );

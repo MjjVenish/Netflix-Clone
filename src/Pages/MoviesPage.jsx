@@ -1,20 +1,17 @@
-import React, { memo } from "react";
+import { memo } from "react";
 import { BsPlayCircleFill, BsPlusLg } from "react-icons/bs";
 import { BiLike } from "react-icons/bi";
 import { AiOutlineDownCircle } from "react-icons/ai";
 import { HiStar } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import Carousel from "react-multi-carousel";
-import { useUserContext } from "../context/netflixContext";
-import { bxios } from "../context/Axios";
+import { useUserContext } from "../utils/hooks/userContext";
 import "react-multi-carousel/lib/styles.css";
+import { addlist } from "../lib/axios/api-functions/movies";
 
-const MoviesNetflix = ({ title, urlData, setMain }) => {
+const MoviesPage = ({ title, urlData, setBanner }) => {
   const { base_url, youtu } = useUserContext();
   const navigation = useNavigate();
-  const addlist = async (data) => {
-    await bxios.post("myList", data);
-  };
 
   const responsive = {
     superLargeDesktop: {
@@ -44,7 +41,7 @@ const MoviesNetflix = ({ title, urlData, setMain }) => {
       </h1>
       <div className={`grid-parent grid gap-x-5`}>
         <Carousel responsive={responsive} containerClass="carousel-container">
-          {urlData.map((data) => (
+          {urlData?.map((data) => (
             <li key={data.id} className={`hov`}>
               <img
                 src={`${base_url}${data.poster_path}`}
@@ -57,7 +54,7 @@ const MoviesNetflix = ({ title, urlData, setMain }) => {
                     <BsPlayCircleFill
                       className="text-[30px] border p-[5px] rounded-[50%] mr-[5px]"
                       onClick={() => {
-                        setMain([data]);
+                        setBanner([data]);
                       }}
                     />
                     <BsPlusLg
@@ -105,4 +102,4 @@ const MoviesNetflix = ({ title, urlData, setMain }) => {
     </div>
   );
 };
-export default memo(MoviesNetflix);
+export default memo(MoviesPage);

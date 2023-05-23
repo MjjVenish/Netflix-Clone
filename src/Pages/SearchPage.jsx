@@ -1,31 +1,23 @@
 import React, { memo, useEffect, useState } from "react";
-import { bxios } from "../context/Axios";
 import { BsPlayCircleFill, BsPlusLg } from "react-icons/bs";
 import { BiLike } from "react-icons/bi";
 import { AiOutlineDownCircle } from "react-icons/ai";
 import { HiStar } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
-import { useUserContext } from "../context/netflixContext";
+import { useUserContext } from "../utils/hooks/userContext";
+import { getAllMovies, addlist } from "../lib/axios/api-functions/movies";
 
-const SearchNetflix = () => {
+const SearchPage = () => {
   const { base_url, search, youtu } = useUserContext();
   const [totalData, setTotalData] = useState([]);
   const navigation = useNavigate();
 
   useEffect(() => {
-    const search = async () => {
-      const { data } = await bxios.get("/movies");
-      setTotalData(data);
-    };
-    search();
+    getAllMovies().then(({ data }) => setTotalData(data));
   }, []);
-  const addlist = async (data) => {
-    await bxios.post("myList", data);
-  };
 
   return (
     <>
-      {/* <NavBarNetflix /> */}
       <div className="overflow-x-auto sea">
         {search.length > 0 && (
           <ul className={`grid grid-cols-5`}>
@@ -91,4 +83,4 @@ const SearchNetflix = () => {
     </>
   );
 };
-export default memo(SearchNetflix);
+export default memo(SearchPage);

@@ -2,17 +2,16 @@ import { memo, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { BsPlayFill } from "react-icons/bs";
 import YouTube from "react-youtube";
-import { bxios } from "../context/Axios";
-import { useUserContext } from "../context/netflixContext";
+import { useUserContext } from "../utils/hooks/userContext";
+import server from "../lib/axios/server";
 
-const SingleNetflix = () => {
+const SinglePage = () => {
   const { base_url, linky } = useUserContext();
   const [singleMovie, setSingleMovie] = useState([]);
   const { id } = useParams();
-
   useEffect(() => {
     const totalMovie = async () => {
-      const { data } = await bxios.get(`/movies/${id}`);
+      const { data } = await server.get(`/movies/${id}`);
       setSingleMovie([data]);
     };
     totalMovie();
@@ -83,4 +82,4 @@ const SingleNetflix = () => {
     </div>
   );
 };
-export default memo(SingleNetflix);
+export default memo(SinglePage);
