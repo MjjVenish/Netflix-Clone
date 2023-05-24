@@ -14,7 +14,7 @@ const base_url = "https://image.tmdb.org/t/p/original";
 const NetflixContext = ({ children }) => {
   const [userDetails, setUserDetails] = useState(null);
   const [search, setSearch] = useState("");
-  const [linky, setLinky] = useState("");
+  const [links, setLinks] = useState("");
   const [totalMovie, setTotalMovie] = useState([]);
   const intialUser = useMemo(
     () => ({
@@ -32,18 +32,12 @@ const NetflixContext = ({ children }) => {
     setTotalMovie(data);
   }, []);
 
-  const youtu = (url) => {
-    setLinky(url);
-  };
   const userLogin = (user) => {
     setUserDetails(user);
   };
   const logoutNetflix = useCallback(() => {
     setUserDetails(null);
   }, []);
-  const searchBar = (info) => {
-    setSearch(info);
-  };
 
   return (
     <contextNetlix.Provider
@@ -54,9 +48,9 @@ const NetflixContext = ({ children }) => {
         intialUser,
         base_url,
         search,
-        searchBar,
-        youtu,
-        linky,
+        searchBar: setSearch,
+        youtubeLink: setLinks,
+        links,
         totalMovie,
       }}
     >

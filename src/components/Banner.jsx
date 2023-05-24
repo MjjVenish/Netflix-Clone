@@ -1,10 +1,9 @@
 import { memo } from "react";
-import { BsPlayFill } from "react-icons/bs";
-import { AiOutlinePlus } from "react-icons/ai";
 import { useUserContext } from "../utils/hooks/userContext";
 import { recentAdded } from "../lib/axios/api-functions/movies";
+import { BsPlayFill, AiOutlinePlus } from "../icons/index";
 
-const Banner = ({ play, banner, setPlay, addCarts, youtu }) => {
+const Banner = ({ play, banner, setPlay, addCarts, youtubeLink }) => {
   const { base_url } = useUserContext();
   return (
     <>
@@ -22,7 +21,7 @@ const Banner = ({ play, banner, setPlay, addCarts, youtu }) => {
             <button
               onClick={() => {
                 setPlay(!play);
-                youtu(val?.video_id);
+                youtubeLink(val?.video_id);
                 recentAdded(val);
               }}
               className="flex bg-white text-[20px] absolute px-[22px] py-[6px] rounded-lg top-[38vh] left-[10vh]"

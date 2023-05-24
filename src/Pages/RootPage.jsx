@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import netflix from "../assets/pngwing.com.png";
+import netflix from "../assets/image/pngwing.com.png";
 const RootPage = () => {
   return (
     <div className="h-[110vh] bg-black bg-ime ">

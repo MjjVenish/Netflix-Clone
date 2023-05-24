@@ -1,8 +1,4 @@
-import { memo, useEffect, useState } from "react";
-import { BsPlayCircleFill, BsPlusLg } from "react-icons/bs";
-import { BiLike } from "react-icons/bi";
-import { AiOutlineDownCircle } from "react-icons/ai";
-import { HiStar } from "react-icons/hi";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../utils/hooks/userContext";
 import {
@@ -10,15 +6,22 @@ import {
   recentDelete,
   addlist,
 } from "../lib/axios/api-functions/movies";
+import {
+  BsPlayCircleFill,
+  BsPlusLg,
+  BiLike,
+  AiOutlineDownCircle,
+  HiStar,
+} from "../icons/index";
 
 const RecentAdded = () => {
-  const { base_url, youtu } = useUserContext();
-  const [recent, setRecent] = useState([]);
+  const { base_url, youtubeLink } = useUserContext();
+  const [recentMovies, setRecentMovies] = useState([]);
   const navigation = useNavigate();
 
   const recentList = async () => {
     const { data } = await recentAddedMovies();
-    setRecent(
+    setRecentMovies(
       data.length > 10
         ? recentDelete(data.reverse()[data.length - 1])
         : data.reverse()
@@ -30,9 +33,9 @@ const RecentAdded = () => {
 
   return (
     <>
-      {recent.length > 0 ? (
+      {recentMovies.length > 0 ? (
         <ul className="grid grid-cols-5 h-[100vh] bg-black">
-          {recent?.map((data) => (
+          {recentMovies?.map((data) => (
             <li key={data.id} className="hov">
               <img
                 className="h-[40vh] w-[100%]"
@@ -57,7 +60,7 @@ const RecentAdded = () => {
                     <AiOutlineDownCircle
                       onClick={() => {
                         navigation(`/browse/${data.id}`);
-                        youtu(data.video_id);
+                        youtubeLink(data.video_id);
                       }}
                       className="text-[35px] p-[5px] border rounded-[50%]"
                     />

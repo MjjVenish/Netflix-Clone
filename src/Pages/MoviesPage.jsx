@@ -1,16 +1,19 @@
-import { memo } from "react";
-import { BsPlayCircleFill, BsPlusLg } from "react-icons/bs";
-import { BiLike } from "react-icons/bi";
-import { AiOutlineDownCircle } from "react-icons/ai";
-import { HiStar } from "react-icons/hi";
+import { Fragment, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import { useUserContext } from "../utils/hooks/userContext";
 import "react-multi-carousel/lib/styles.css";
 import { addlist } from "../lib/axios/api-functions/movies";
+import {
+  BsPlayCircleFill,
+  BsPlusLg,
+  BiLike,
+  AiOutlineDownCircle,
+  HiStar,
+} from "../icons/index";
 
 const MoviesPage = ({ title, urlData, setBanner }) => {
-  const { base_url, youtu } = useUserContext();
+  const { base_url, youtubeLink } = useUserContext();
   const navigation = useNavigate();
 
   const responsive = {
@@ -42,7 +45,7 @@ const MoviesPage = ({ title, urlData, setBanner }) => {
       <div className={`grid-parent grid gap-x-5`}>
         <Carousel responsive={responsive} containerClass="carousel-container">
           {urlData?.map((data) => (
-            <li key={data.id} className={`hov`}>
+            <div key={data.id} className={`hov`}>
               <img
                 src={`${base_url}${data.poster_path}`}
                 alt=""
@@ -72,7 +75,7 @@ const MoviesPage = ({ title, urlData, setBanner }) => {
                     <AiOutlineDownCircle
                       onClick={() => {
                         navigation(`/browse/${data.id}`);
-                        youtu(data.video_id);
+                        youtubeLink(data.video_id);
                       }}
                       className="text-[35px] p-[5px] border rounded-[50%]"
                     />
@@ -95,7 +98,7 @@ const MoviesPage = ({ title, urlData, setBanner }) => {
                   </div>
                 </div>
               </div>
-            </li>
+            </div>
           ))}
         </Carousel>
       </div>

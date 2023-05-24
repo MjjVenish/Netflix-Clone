@@ -1,14 +1,17 @@
 import React, { memo, useEffect, useState } from "react";
-import { BsPlayCircleFill, BsPlusLg } from "react-icons/bs";
-import { BiLike } from "react-icons/bi";
-import { AiOutlineDownCircle } from "react-icons/ai";
-import { HiStar } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../utils/hooks/userContext";
 import { getAllMovies, addlist } from "../lib/axios/api-functions/movies";
+import {
+  BsPlayCircleFill,
+  BsPlusLg,
+  BiLike,
+  AiOutlineDownCircle,
+  HiStar,
+} from "../icons/index";
 
 const SearchPage = () => {
-  const { base_url, search, youtu } = useUserContext();
+  const { base_url, search, youtubeLink } = useUserContext();
   const [totalData, setTotalData] = useState([]);
   const navigation = useNavigate();
 
@@ -47,7 +50,7 @@ const SearchPage = () => {
                         <AiOutlineDownCircle
                           onClick={() => {
                             navigation(`/browse/${data.id}`);
-                            youtu(data.video_id);
+                            youtubeLink(data.video_id);
                           }}
                           className="text-[35px] p-[5px] border rounded-[50%]"
                         />

@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef, memo } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../utils/hooks/userContext";
-import netFlix from "../assets/pngwing.com.png";
+import netFlix from "../assets/image/pngwing.com.png";
 
 const LoginPage = () => {
   const { userLogin, intialUser } = useUserContext();

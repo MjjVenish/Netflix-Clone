@@ -1,6 +1,5 @@
 import { memo, useState, useEffect } from "react";
 import YouTube from "react-youtube";
-import server from "../lib/axios/server";
 import { useUserContext } from "../utils/hooks/userContext";
 import SearchPage from "./SearchPage";
 import MoviesPage from "./MoviesPage";
@@ -10,11 +9,12 @@ import {
   topratedMovies,
   trendingMovies,
   upcomingMovies,
+  addlist,
 } from "../lib/axios/api-functions/movies";
 import Banner from "../components/Banner";
 
 const HomePage = () => {
-  const { search, youtu, linky } = useUserContext();
+  const { search, youtubeLink, links } = useUserContext();
   const [topRated, setTopRated] = useState([]);
   const [popular, setPouplar] = useState([]);
   const [upComing, setUpComing] = useState([]);
@@ -45,10 +45,6 @@ const HomePage = () => {
     setTrending(trends.data);
   };
 
-  const addCarts = (id) => {
-    server.post("/myList", id);
-  };
-
   return (
     <>
       {search.length > 0 ? (
@@ -58,14 +54,14 @@ const HomePage = () => {
           play={play}
           banner={banner}
           setPlay={setPlay}
-          addCarts={addCarts}
-          youtu={youtu}
+          addCarts={addlist}
+          youtubeLink={youtubeLink}
         />
       ) : (
         <>
           <YouTube
             containerClassName={"youtube"}
-            videoId={`/${linky}`}
+            videoId={`/${links}`}
             opts={{
               width: "1518",
               height: "600",

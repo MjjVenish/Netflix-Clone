@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import netflix from "../assets/pngwing.com.png";
-import { IoMdSearch, IoMdNotifications } from "react-icons/io";
-import { AiFillCaretDown } from "react-icons/ai";
-import { MdEmail } from "react-icons/md";
-import { FaKey } from "react-icons/fa";
-import user from "../assets/netflix user.jpg";
-import { ImLocation2 } from "react-icons/im";
-import us from "../assets/user-icon.jpg";
+import user from "../assets/image/netflix user.jpg";
+import netflix from "../assets/image/pngwing.com.png";
+import userImg from "../assets/image/user-icon.jpg";
 import { useUserContext } from "../utils/hooks/userContext";
+import {
+  AiFillCaretDown,
+  MdEmail,
+  FaKey,
+  ImLocation2,
+  IoMdSearch,
+  IoMdNotifications,
+} from "../icons/index";
 
 const navbar = ["home", "tv shows", "movies", "recently added", "mylist"];
 
@@ -26,9 +29,8 @@ const NavBar = () => {
       <nav className="flex h-[7vh] text-white bg-[#000000e4] ">
         <img src={netflix} alt="" className="w-[150px] h-[50px]" />
         {navbar.map((nav) => (
-          <div className="flex flex-1  text-center items-center ">
+          <div className="flex flex-1  text-center items-center " key={nav}>
             <NavLink
-              key={nav}
               className="flex-1"
               to={nav === "home" ? "/browse" : "/" + nav}
             >
@@ -56,7 +58,7 @@ const NavBar = () => {
                   <div>
                     <div className="w-[100px] h-[100px] ml-[25px] rounded-[50%] mb-[70px] ">
                       <img
-                        src={us}
+                        src={userImg}
                         alt=""
                         className="rounded-[50%] ml-[25px]"
                       />
