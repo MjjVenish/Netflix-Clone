@@ -1,9 +1,9 @@
-import { Fragment, memo } from "react";
+import { memo } from "react";
 import { useNavigate } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import { useUserContext } from "../utils/hooks/userContext";
 import "react-multi-carousel/lib/styles.css";
-import { addlist } from "../lib/axios/api-functions/movies";
+import { addlist, updateMovie } from "../lib/axios/api-functions/movies";
 import {
   BsPlayCircleFill,
   BsPlusLg,
@@ -11,8 +11,9 @@ import {
   AiOutlineDownCircle,
   HiStar,
 } from "../icons/index";
+import server from "../lib/axios/server";
 
-const MoviesPage = ({ title, urlData, setBanner }) => {
+const MoviesPage = ({ title, urlData, setBanner, setData }) => {
   const { base_url, youtubeLink } = useUserContext();
   const navigation = useNavigate();
 
@@ -40,7 +41,7 @@ const MoviesPage = ({ title, urlData, setBanner }) => {
   return (
     <div className={``}>
       <h1 className="list-none ml-[10px]  bg-black text-white p-[5px] ">
-        {title}
+        {title.toUpperCase()} Movies
       </h1>
       <div className={`grid-parent grid gap-x-5`}>
         <Carousel responsive={responsive} containerClass="carousel-container">
@@ -67,8 +68,18 @@ const MoviesPage = ({ title, urlData, setBanner }) => {
                       className="text-[30px] border p-[5px] rounded-[50%] mr-[5px]"
                     />
                     <BiLike
-                      onClick={() => {}}
-                      className={`text-[30px] border p-[5px] rounded-[50%] `}
+                      onClick={async () => {
+                        await updateMovie(
+                          { ...data, adult: !data.adult },
+                          title
+                        );
+                        server
+                          .get(`/${title}`)
+                          .then(({ data }) => setData(data));
+                      }}
+                      className={`text-[30px] border p-[5px] rounded-[50%] ${
+                        data.adult ? "bg-blue-700" : ""
+                      }`}
                     />
                   </div>
                   <div className="flex flex-1 justify-end mr-[70px] ">

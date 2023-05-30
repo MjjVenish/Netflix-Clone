@@ -1,8 +1,9 @@
 import { memo } from "react";
 import { deleteCart } from "../lib/axios/api-functions/movies";
 import { useUserContext } from "../utils/hooks/userContext";
+import { myCart } from "../lib/axios/api-functions/movies";
 
-const SingleCart = ({ list }) => {
+const SingleCart = ({ list, setCart }) => {
   const { base_url } = useUserContext();
   return (
     <>
@@ -22,14 +23,16 @@ const SingleCart = ({ list }) => {
             Langugage:
             {list.original_language === "en" ? "English" : "Spanish"}
           </h1>
-          <a
-            href=""
-            onClick={() => deleteCart(list.id)}
+          <button
+            onClick={async () => {
+              await deleteCart(list.id);
+              myCart().then(({ data }) => setCart(data));
+            }}
             className="bg-red-700 p-[10px] absolute 
                 rounded-[50%] right-[-10px] top-[-10px] cursor-pointer"
           >
             X
-          </a>
+          </button>
         </div>
       </li>
     </>

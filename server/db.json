@@ -208,6 +208,104 @@
       "video_id": "o5F8MOz_IDw",
       "vote_average": 7.725,
       "vote_count": 7422
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/3CxUndGhUcZdt1Zggjdb2HkLLQX.jpg",
+      "id": 640146,
+      "title": "Ant-Man and the Wasp: Quantumania",
+      "director": "Jake Kasdan",
+      "cast": "Dwayne Johnson,Jack Black,Kevin Hart,Karen Gillan,Nick Jonas,Awkwafina,Rory McCann,Danny Glover,Danny DeVito,Alex Wolff,Morgan Turner,SerDarius Blain,Madison Iseman,Colin Hanks,Rhys Darby",
+      "writer": "Jake Kasdan,Jeff Pinkner,Scott Rosenberg",
+      "genres": "Family Features,Comedies,Movies Based on Books ,Action & Adventure ,US Movies",
+      "this movie is": "Adrenaline Rush,Exciting",
+      "maturity rating": "U/A 13+ crude humor,language,violence  Suitable for persons aged 13 and above and under parental guidance for people under age of 13",
+      "original_language": "en",
+      "original_title": "Ant-Man and the Wasp: Quantumania",
+      "overview": "Super-Hero partners Scott Lang and Hope van Dyne, along with with Hope's parents Janet van Dyne and Hank Pym, and Scott's daughter Cassie Lang, find themselves exploring the Quantum Realm, interacting with strange new creatures and embarking on an adventure that will push them beyond the limits of what they thought possible.",
+      "poster_path": "/ngl2FKBlU4fhbdsrtdom9LVLBXw.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        28,
+        12,
+        878
+      ],
+      "popularity": 6586.864,
+      "release_date": "2023-02-15",
+      "video": "https://www.youtube.com/embed/ZlNFpri-Y40",
+      "video_id": "ZlNFpri-Y40",
+      "vote_average": 6.5,
+      "vote_count": 1666
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/tIX6j3NzadlwGcJ52nuWdmtOQkg.jpg",
+      "genre_ids": [
+        27,
+        53,
+        9648
+      ],
+      "id": 717728,
+      "original_language": "en",
+      "original_title": "Jeepers Creepers: Reborn",
+      "overview": "Forced to travel with her boyfriend to a horror festival, Laine begins to experience disturbing visions associated with the urban legend of The Creeper. As the festival arrives and the blood-soaked entertainment builds to a frenzy, she becomes the center of it while something unearthly has been summoned.",
+      "popularity": 333.909,
+      "poster_path": "/aGBuiirBIQ7o64FmJxO53eYDuro.jpg",
+      "release_date": "2022-09-15",
+      "title": "Jeepers Creepers: Reborn",
+      "video": false,
+      "video_id": "FXvxloPNW20",
+      "vote_average": 5.8,
+      "vote_count": 741
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/b9UCfDzwiWw7mIFsIQR9ZJUeh7q.jpg",
+      "id": 868759,
+      "title": "Ghosted",
+      "director": "Gideon Raff",
+      "cast": "Chris Evans,michael Kenneth Williams,Haley Benneth,Alessandro Nivola Michiel Huismam,Alex Hassell,Mark Ivanir,Chris Chalk,Greg Kinnear,Ben kingsley",
+      "writer": "Gideon Raff",
+      "genres": "Dramas,Thriller Movies,US Movies",
+      "this movie is": "Gritty,Suspenseful,Exciting",
+      "maturity rating": "U/A 16+ gore,language,mature themes Suitable for persons aged 16 and above and under parental guidance foe people under age of 16",
+      "original_language": "en",
+      "original_title": "Ghosted",
+      "overview": "Salt-of-the-earth Cole falls head over heels for enigmatic Sadie — but then makes the shocking discovery that she’s a secret agent. Before they can decide on a second date, Cole and Sadie are swept away on an international adventure to save the world.",
+      "poster_path": "/liLN69YgoovHVgmlHJ876PKi5Yi.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        10749,
+        28,
+        35
+      ],
+      "popularity": 161.347,
+      "release_date": "2023-04-21",
+      "video": "https://www.youtube.com/embed/IAdCsNtEuBU",
+      "video_id": "IAdCsNtEuBU",
+      "vote_average": 7.25,
+      "vote_count": 176
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/a2tys4sD7xzVaogPntGsT1ypVoT.jpg",
+      "genre_ids": [
+        53,
+        35,
+        80
+      ],
+      "id": 804150,
+      "original_language": "en",
+      "original_title": "Cocaine Bear",
+      "overview": "Inspired by a true story, an oddball group of cops, criminals, tourists and teens converge in a Georgia forest where a 500-pound black bear goes on a murderous rampage after unintentionally ingesting cocaine.",
+      "popularity": 1914.262,
+      "poster_path": "/gOnmaxHo0412UVr1QM5Nekv1xPi.jpg",
+      "release_date": "2023-02-22",
+      "title": "Cocaine Bear",
+      "video": false,
+      "video_id": "DuWEEKeJLMI",
+      "vote_average": 6.4,
+      "vote_count": 840
     }
   ],
   "movies": [
@@ -2142,9 +2240,8 @@
   ],
   "trending": [
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/b9UCfDzwiWw7mIFsIQR9ZJUeh7q.jpg",
-      "id": 868759,
       "title": "Ghosted",
       "director": "Gideon Raff",
       "cast": "Chris Evans,michael Kenneth Williams,Haley Benneth,Alessandro Nivola Michiel Huismam,Alex Hassell,Mark Ivanir,Chris Chalk,Greg Kinnear,Ben kingsley",
@@ -2167,10 +2264,11 @@
       "video": "https://www.youtube.com/embed/IAdCsNtEuBU",
       "video_id": "IAdCsNtEuBU",
       "vote_average": 7.25,
-      "vote_count": 176
+      "vote_count": 176,
+      "id": 868759
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/3CxUndGhUcZdt1Zggjdb2HkLLQX.jpg",
       "title": "Ant-Man and the Wasp: Quantumania",
       "director": "Jake Kasdan",
@@ -2199,9 +2297,8 @@
       "id": 640146
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg",
-      "id": 713704,
       "title": "Evil Dead Rise",
       "director": "Fede Alvarez",
       "cast": "jane Levy,shiloh Fernandez,lou Taylor Pucci,Jessica lucas,Elizabeth Blackmore,Phoenix Connolly,jim McLarty,Sian Davis,Stephen Butterworth,Karl Willetts",
@@ -2223,12 +2320,12 @@
       "video": "https://www.youtube.com/embed/smTK_AeAPHs",
       "video_id": "smTK_AeAPHs",
       "vote_average": 7.118,
-      "vote_count": 102
+      "vote_count": 102,
+      "id": 713704
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/tr91gx3LHDXADTuXga0skogvMw3.jpg",
-      "id": 130987,
       "name": "Dead Ringers",
       "Creators": "Debora Cahn",
       "cast": "Keri Russell,Rufus Sewell,David Gyasi,Ato Essandoh,Ali Ahn,Rory Kinnear,Celia Imrie,Nana Mensah,Miguel Sandovai,Micheal Mckean",
@@ -2252,7 +2349,8 @@
       "video_id": "FA_XOruRFfU",
       "origin_country": [
         "US"
-      ]
+      ],
+      "id": 130987
     },
     {
       "adult": false,

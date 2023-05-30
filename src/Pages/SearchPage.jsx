@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../utils/hooks/userContext";
 import { getAllMovies, addlist } from "../lib/axios/api-functions/movies";

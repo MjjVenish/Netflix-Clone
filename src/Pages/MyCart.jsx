@@ -15,7 +15,9 @@ const MyCart = () => {
       }`}
     >
       {cart.length > 0 ? (
-        cart?.map((list) => <SingleCartPage list={list} key={list.id} />)
+        cart?.map((list) => (
+          <SingleCartPage list={list} key={list.id} setCart={setCart} />
+        ))
       ) : (
         <div className="grid justify-center items-center">
           <h1 className="text-3xl"> Cart is Empty</h1>

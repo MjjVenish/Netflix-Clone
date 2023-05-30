@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../utils/hooks/userContext";
-import {
-  recentAddedMovies,
-  recentDelete,
-  addlist,
-} from "../lib/axios/api-functions/movies";
+import { recentAddedMovies, addlist } from "../lib/axios/api-functions/movies";
 import {
   BsPlayCircleFill,
   BsPlusLg,
@@ -21,12 +17,10 @@ const RecentAdded = () => {
 
   const recentList = async () => {
     const { data } = await recentAddedMovies();
-    setRecentMovies(
-      data.length > 10
-        ? recentDelete(data.reverse()[data.length - 1])
-        : data.reverse()
-    );
+    if (data.length > 10) setRecentMovies(data.reverse().slice(0, 10));
+    else if (data.length < 10) setRecentMovies(data.reverse());
   };
+
   useEffect(() => {
     recentList();
   }, []);
@@ -53,7 +47,9 @@ const RecentAdded = () => {
                       className="text-[30px] border p-[5px] rounded-[50%] mr-[5px]"
                     />
                     <BiLike
-                      className={`text-[30px] border p-[5px] rounded-[50%] ${""}`}
+                      className={`text-[30px] border p-[5px] rounded-[50%] ${
+                        data.adult ? "bg-blue-700" : ""
+                      }`}
                     />
                   </div>
                   <div className="flex flex-1 ml-[70px]">

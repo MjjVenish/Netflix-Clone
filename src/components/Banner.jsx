@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { useUserContext } from "../utils/hooks/userContext";
-import { recentAdded } from "../lib/axios/api-functions/movies";
+import { recentAdded, updateMovie } from "../lib/axios/api-functions/movies";
 import { BsPlayFill, AiOutlinePlus } from "../icons/index";
 
 const Banner = ({ play, banner, setPlay, addCarts, youtubeLink }) => {
@@ -19,10 +19,11 @@ const Banner = ({ play, banner, setPlay, addCarts, youtubeLink }) => {
               {val?.title ?? val?.name}
             </h1>
             <button
-              onClick={() => {
+              onClick={async () => {
                 setPlay(!play);
                 youtubeLink(val?.video_id);
                 recentAdded(val);
+                await updateMovie({ ...val, watchIt: new Date() });
               }}
               className="flex bg-white text-[20px] absolute px-[22px] py-[6px] rounded-lg top-[38vh] left-[10vh]"
             >

@@ -14,3 +14,6 @@ export const deleteCart = async (cart) =>
   await server.delete(`/myList/${cart}`);
 export const recentDelete = async (data) =>
   await server.delete(`/recent/${data.id}`);
+
+export const updateMovie = async ({ id, ...data }, segment) =>
+  await server.put(`/${segment}/${id}`, data);

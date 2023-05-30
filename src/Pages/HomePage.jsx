@@ -77,22 +77,27 @@ const HomePage = () => {
         </>
       )}
       <MoviesPage
-        title="TRENDING MOVIES"
+        title="trending"
+        setData={setTrending}
         urlData={trending}
         setBanner={setBanner}
       />
       <MoviesPage
-        title="POPULAR MOVIES"
+        title="popular"
+        setData={setPouplar}
+        setPouplar
         urlData={popular}
         setBanner={setBanner}
       />
       <MoviesPage
-        title="TOP RATED MOVIES"
+        title="topRated"
+        setData={setTopRated}
         urlData={topRated}
         setBanner={setBanner}
       />
       <MoviesPage
-        title="UPCOMING MOVIES"
+        title="upComing"
+        setData={setUpComing}
         urlData={upComing}
         setBanner={setBanner}
       />
