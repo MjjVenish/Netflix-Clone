@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
 import user from "../assets/image/netflix user.jpg";
 import netflix from "../assets/image/pngwing.com.png";
 import userImg from "../assets/image/user-icon.jpg";

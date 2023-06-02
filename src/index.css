@@ -15,7 +15,7 @@
 }
 .fou:focus+label,.fou:not(:placeholder-shown)+label{
 font-size: 10px;
-top: 155px;
+top: 25px;
 }
 .fo:focus+label,.fo:not(:placeholder-shown)+label{
   font-size: 10px;

@@ -2324,7 +2324,7 @@
       "id": 713704
     },
     {
-      "adult": true,
+      "adult": false,
       "backdrop_path": "/tr91gx3LHDXADTuXga0skogvMw3.jpg",
       "name": "Dead Ringers",
       "Creators": "Debora Cahn",
@@ -2353,9 +2353,8 @@
       "id": 130987
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/z3Qc5a0grcCREAQKqI195P05dVf.jpg",
-      "id": 813726,
       "title": "A Tourist's Guide to Love",
       "director": "Steven Tsuchida",
       "cast": "Rachael Leign Cook,Scott Ly,Missi Pyle,Ben Feldman,Glynn sweet,Alexa Povah,Jacqueline Correa,Nondumiso Temba,Andrew Barth Feldman,Morgan Dudley,quinn Truc Tran,NSUT le Thien",
@@ -2378,7 +2377,8 @@
       "video": "https://www.youtube.com/embed/0fbsBQ5Le_I",
       "video_id": "0fbsBQ5Le_I",
       "vote_average": 6.472,
-      "vote_count": 18
+      "vote_count": 18,
+      "id": 813726
     },
     {
       "adult": false,

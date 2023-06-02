@@ -16,17 +16,6 @@ const NetflixContext = ({ children }) => {
   const [search, setSearch] = useState("");
   const [links, setLinks] = useState("");
   const [totalMovie, setTotalMovie] = useState([]);
-  const intialUser = useMemo(
-    () => ({
-      email: "venishmjj@gmail.com",
-      phone: "",
-      pass: "jugiglgy",
-      reminderme: true,
-      id: 2,
-    }),
-    []
-  );
-
   useEffect(() => {
     const { data } = getAllMovies();
     setTotalMovie(data);
@@ -45,7 +34,6 @@ const NetflixContext = ({ children }) => {
         userDetails,
         userLogin,
         logoutNetflix,
-        intialUser,
         base_url,
         search,
         searchBar: setSearch,
