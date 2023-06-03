@@ -62,7 +62,9 @@ const NavBar = () => {
                         alt=""
                         className="rounded-[50%] ml-[25px]"
                       />
-                      <h1 className="text-center ml-[40px]">MjjVenish</h1>
+                      <h1 className="text-center ml-[40px]">
+                        {userDetails?.email.slice(0, 7)}
+                      </h1>
                       <div className="flex ml-[40px] relative">
                         <MdEmail
                           className="w-[35px] h-[35px] flex-1 "
@@ -73,7 +75,7 @@ const NavBar = () => {
                         />
                         {email ? (
                           <h1 className="absolute top-[30px] left-[-40px]">
-                            {userDetails.email}
+                            {userDetails?.email}
                           </h1>
                         ) : (
                           ""
@@ -87,7 +89,7 @@ const NavBar = () => {
                         />
                         {pass ? (
                           <h1 className="absolute top-[30px]">
-                            {userDetails.pass}
+                            {userDetails?.password}
                           </h1>
                         ) : (
                           ""
@@ -98,7 +100,7 @@ const NavBar = () => {
                       <h1 className="mb-[45px] flex ">
                         <ImLocation2 className="mr-[3px]" />
                         Coimbatore
-                        <h1 className="ml-[5px]">CEO of World</h1>
+                        <h1 className="ml-[5px]">current location</h1>
                       </h1>
                       <h1 className="text-center mb-[30px]">
                         Enjoy your Movies

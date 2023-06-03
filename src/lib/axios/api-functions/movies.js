@@ -17,3 +17,7 @@ export const recentDelete = async (data) =>
 
 export const updateMovie = async ({ id, ...data }, segment) =>
   await server.put(`/${segment}/${id}`, data);
+
+export const usersRegister = async (users) =>
+  await server.post(`/usersRegister`, users);
+export const getUsers = async () => await server.get("/usersRegister");

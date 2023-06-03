@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import ErrorPage from "../Pages/ErrorPage";
 import PageWrapper from "../container/PageWrapper";
 import SuspenseWrapper from "../container/SuspenseWrapper";
+import Register from "../Pages/Register";
 const RootPage = lazy(() => import("../Pages/RootPage"));
 const LoginPage = lazy(() => import("../Pages/LoginPage"));
 const HomePage = lazy(() => import("../Pages/HomePage"));
@@ -67,6 +68,7 @@ const AppRoutes = () => {
           </SuspenseWrapper>
         }
       />
+      <Route path="/register" element={<Register />} />
       <Route path="/*" element={<ErrorPage />} />
     </Routes>
   );

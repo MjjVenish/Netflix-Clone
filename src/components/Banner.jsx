@@ -38,7 +38,7 @@ const Banner = ({ play, banner, setPlay, addCarts, youtubeLink }) => {
               Add List
             </button>
             <h1 className="absolute text-white top-[45vh] left-[10vh] text-[20px]">
-              {val.overview}
+              {val?.overview}
             </h1>
           </li>
         ))}

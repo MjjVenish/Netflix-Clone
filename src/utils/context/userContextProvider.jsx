@@ -20,10 +20,6 @@ const NetflixContext = ({ children }) => {
     const { data } = getAllMovies();
     setTotalMovie(data);
   }, []);
-
-  const userLogin = (user) => {
-    setUserDetails(user);
-  };
   const logoutNetflix = useCallback(() => {
     setUserDetails(null);
   }, []);
@@ -32,7 +28,7 @@ const NetflixContext = ({ children }) => {
     <contextNetlix.Provider
       value={{
         userDetails,
-        userLogin,
+        userLogin: setUserDetails,
         logoutNetflix,
         base_url,
         search,
