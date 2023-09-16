@@ -1,10 +1,4 @@
-import {
-  useEffect,
-  useState,
-  useMemo,
-  useCallback,
-  createContext,
-} from "react";
+import { useEffect, useState, useCallback, createContext } from "react";
 import { getAllMovies } from "../../lib/axios/api-functions/movies";
 
 export const contextNetlix = createContext(null);

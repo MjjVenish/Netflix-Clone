@@ -15,7 +15,7 @@ const SinglePage = () => {
       setSingleSetMovie([data]);
     };
     singleMovie();
-  }, []);
+  }, [id]);
   const [singlePlay, setSinglePlay] = useState(true);
   const navigation = useNavigate();
 
